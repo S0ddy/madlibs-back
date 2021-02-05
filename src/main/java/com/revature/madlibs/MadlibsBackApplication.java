@@ -30,7 +30,7 @@ public class MadlibsBackApplication {
 		User user = new User("username", "pass");
 
 		us.save(user);
-//		us.getUserByUserId(1);
+		System.out.println(us.getUserByUserId(1));
 		
 	}
 }
