@@ -5,14 +5,15 @@ CREATE TABLE user_table (
 );
 
 create table login_table (
- user_name VARCHAR primary key,
- password VARCHAR not null,
+ login_id SERIAL primary key,
+ user_name VARCHAR not null,
+ user_password VARCHAR,
  user_id INT4, 
   FOREIGN KEY (user_id)
       REFERENCES user_table (user_id));
 
 CREATE TABLE level_table (
-  level_id SERIAL primary key,
+  level_id INT4 primary key,
   description VARCHAR not null
 );
 
