@@ -4,7 +4,7 @@ import com.revature.madlibs.model.User;
 
 public interface IUserService {
 
-	User getUserById(int userId);
-    boolean insertUser(User user);
+	User getUserByUserId(int userId);
+    boolean save(User user);
 	
 }

@@ -12,14 +12,17 @@ public class UserService implements IUserService {
 	private IUserDao userDao;
 	
 	@Override
-	public User getUserById(int userId) {
-		return userDao.getUserById(userId);
+	public User getUserByUserId(int userId) {
+		return userDao.getUserByUserId(userId);
 	}
 
 	@Override
-	public boolean insertUser(User user) {
-		return userDao.insertUser(user);
+	public boolean save(User user) {
+		if(userDao.save(user) !=  null) 
+			return true;
+		return false;
 	}
+
 
 	
 }

@@ -6,7 +6,7 @@ import com.revature.madlibs.model.User;
 
 public interface IUserDao extends JpaRepository<User, Integer> {
 
-    User getUserById(int userId);
-    boolean insertUser(User user);
+    User getUserByUserId(int userId);
+    User save(User user);
 	
 }
