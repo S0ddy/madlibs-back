@@ -3,9 +3,11 @@ package com.revature.madlibs.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data 
+@Data @NoArgsConstructor @AllArgsConstructor
 @Entity (name = "author_table")
 public class Author {
 

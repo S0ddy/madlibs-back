@@ -2,9 +2,11 @@ package com.revature.madlibs.model;
 
 import javax.persistence.Entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Data 
+@Data @NoArgsConstructor @AllArgsConstructor
 @Entity (name = "inc_story_table")
 public class incStory {
 
