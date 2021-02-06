@@ -25,9 +25,7 @@ public class UserService implements IUserService {
 
 	@Override
 	public User save(User user) {
-		if(userDao.save(user) !=  null) 
-			return user;
-		return user;
+		return userDao.save(user);
 	}
 
 
