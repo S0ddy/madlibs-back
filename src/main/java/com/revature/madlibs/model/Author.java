@@ -1,12 +1,10 @@
 package com.revature.madlibs.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,21 +15,21 @@ import lombok.NoArgsConstructor;
 
 @Data @NoArgsConstructor @AllArgsConstructor
 @Entity 
-@Table(name = "login_table")
-public class Login {
-	@Id 
-	@Column (name = "user_name")
-	private String userName;
-	private String userPassword;
+@Table(name = "author_table")
+public class Author {
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column (name = "author_id")
+	private int authorId;
+	private String authorFirstName;
+	private String authorLastName;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	private User user;
+	@Autowired
+	public Author(String authorFirstName, String authorLastName) {
+		super();
+		this.authorFirstName = authorFirstName;
+		this.authorLastName = authorLastName;
+	}
 	
 	
-	
-	
-	
-	
-	
-	
+
 }

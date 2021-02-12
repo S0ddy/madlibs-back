@@ -18,14 +18,13 @@ public class LoginService implements ILoginService {
 		this.loginDao = loginDao;
 	}
 	
-//	@Override
-//	public Login getLoginByUserName(String userName) {
-//		return loginDao.getLoginByUserName(userName);
-//	}
+	@Override
+	public Login getLoginByUserName(String userName) {
+		return loginDao.getLoginByUserName(userName);
+	}
 
 	@Override
 	public Login save(Login login) {
 		return loginDao.save(login);
 	}
-
 }

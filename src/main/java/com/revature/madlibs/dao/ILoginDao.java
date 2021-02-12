@@ -4,9 +4,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.revature.madlibs.model.Login;
 
-public interface ILoginDao extends JpaRepository<Login, Integer> {
+public interface ILoginDao extends JpaRepository<Login, String> {
 	
-//	Login getLoginByUserName(String userName);
+	Login getLoginByUserName(String userName);
     Login save(Login login);
     
 }
