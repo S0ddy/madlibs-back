@@ -6,10 +6,10 @@ values ('John', 'Smith', 1),
        ('Sal', 'Looser', 5),
        ('Sonic', 'Hedgehog', 6);
 
-insert into login_table (user_name, password, user_id) 
-values ('JohnSmith', 'password', 1),
-       ('GaryGreat1', 'password', 2),
-       ('MonaLisa', 'password', 3),
-       ('JJones', 'password', 4),
-       ('slooser', 'password', 5),
-       ('SuperSonic', 'password', 6);
+insert into login_table (login_id, user_name, user_password, user_id) 
+values (1, 'JohnSmith', 'password', 1),
+       (2, 'GaryGreat1', 'password', 2),
+       (3, 'MonaLisa', 'password', 3),
+       (4, 'JJones', 'password', 4),
+       (5, 'slooser', 'password', 5),
+       (6, 'SuperSonic', 'password', 6);

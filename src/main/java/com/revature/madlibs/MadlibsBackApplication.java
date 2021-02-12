@@ -28,12 +28,13 @@ public class MadlibsBackApplication {
 		SpringApplication.run(MadlibsBackApplication.class, args);
 
 		User user = new User("username3", "lastname");
-		us.save(user);
-		System.out.println("UserById = " + us.getUserByUserId(3));
-		
+//		us.save(user);
+//		System.out.println("UserById = " + us.getUserByUserId(7));
+//		
 		Login login = new Login("Alex", "password", user);
+//		us.save(user);
 		ls.save(login);
-		System.out.println("LoginById = " + ls.getLoginByUserName("Alex"));
+//		System.out.println("LoginById = " + ls.getLoginByUserName("Alex"));
 		
 	}
 }
