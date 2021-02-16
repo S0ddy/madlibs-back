@@ -43,22 +43,22 @@ public class MadlibsBackApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MadlibsBackApplication.class, args);
 
-		User user = new User("username3", "lastname");
+		User user = new User("username4", "lastname");
 		
 		Login login = new Login("Alex", "password", user);
 		ls.save(login);
 
 		Level level = new Level("easy");
-		levelService.save(level);
+//		levelService.save(level);
 		
 		Author auth = new Author("Alex", "LastName");
-		as.save(auth);
+//		as.save(auth);
 //		
-		IncStory incStory = new IncStory("story", levelService.getLevelByLevelId(1), as.getAuthorByAuthorId(1), "Title");
-		System.out.println(incStory);
-		is.save(incStory);
+		IncStory incStory = new IncStory("story", level, auth, "Title");
+//		System.out.println(incStory);
+//		is.save(incStory);
 		
-//		ComStory comStory = new ComStory(is.getIncStoryByIncStoryId(1), us.getUserByUserId(1), "completed story", 1);
-//		iComStory.save(comStory);
+		ComStory comStory = new ComStory(incStory, us.getUserByUserId(1), "completed story", 1);
+		iComStory.save(comStory);
 	}
 }
