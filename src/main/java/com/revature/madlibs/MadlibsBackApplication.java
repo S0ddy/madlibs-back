@@ -6,11 +6,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.revature.madlibs.model.Author;
+import com.revature.madlibs.model.ComStory;
 import com.revature.madlibs.model.IncStory;
 import com.revature.madlibs.model.Level;
 import com.revature.madlibs.model.Login;
 import com.revature.madlibs.model.User;
 import com.revature.madlibs.service.IAuthorService;
+import com.revature.madlibs.service.IComStoryService;
 import com.revature.madlibs.service.IIncStoryService;
 import com.revature.madlibs.service.ILevelService;
 import com.revature.madlibs.service.ILoginService;
@@ -25,15 +27,17 @@ public class MadlibsBackApplication {
     private static ILevelService levelService;
     private static IAuthorService as;
     private static IIncStoryService is;
+    private static IComStoryService iComStory;
 	
     @Autowired
-    public MadlibsBackApplication(IUserService us, ILoginService ls, ILevelService levelService, IAuthorService as, IIncStoryService is) {
+    public MadlibsBackApplication(IUserService us, ILoginService ls, ILevelService levelService, IAuthorService as, IIncStoryService is, IComStoryService iComStory) {
         super();
         MadlibsBackApplication.us = us;
         MadlibsBackApplication.ls = ls;
         MadlibsBackApplication.levelService = levelService;
         MadlibsBackApplication.as = as;
         MadlibsBackApplication.is = is;
+        MadlibsBackApplication.iComStory = iComStory;
     }
 
 	public static void main(String[] args) {
@@ -49,8 +53,12 @@ public class MadlibsBackApplication {
 		
 		Author auth = new Author("Alex", "LastName");
 		as.save(auth);
-		
+//		
 		IncStory incStory = new IncStory("story", levelService.getLevelByLevelId(1), as.getAuthorByAuthorId(1), "Title");
+		System.out.println(incStory);
 		is.save(incStory);
+		
+//		ComStory comStory = new ComStory(is.getIncStoryByIncStoryId(1), us.getUserByUserId(1), "completed story", 1);
+//		iComStory.save(comStory);
 	}
 }
