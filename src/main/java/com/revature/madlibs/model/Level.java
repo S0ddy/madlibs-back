@@ -1,10 +1,17 @@
 package com.revature.madlibs.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +28,8 @@ public class Level {
 	@Column (name = "level_id")
 	private int levelId;
 	private String description;
+	@OneToMany(mappedBy = "storyLevel", cascade = CascadeType.ALL)
+	private List<IncStory> incStories = new ArrayList<>();
 	
 	@Autowired
 	public Level(String description) {

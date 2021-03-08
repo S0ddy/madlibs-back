@@ -3,9 +3,11 @@ package com.revature.madlibs.model;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -25,8 +27,10 @@ public class IncStory {
 	private int incStoryId;
 	private String storyText;
 	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn
 	private Level storyLevel;
 	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn
 	private Author incStoryAuthor;
 	private String incStoryTitle;
 	
