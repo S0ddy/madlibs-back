@@ -28,8 +28,8 @@ public class Author {
 	private int authorId;
 	private String authorFirstName;
 	private String authorLastName;
-	@OneToMany(mappedBy = "incStoryAuthor", cascade = CascadeType.ALL)
-	private List<IncStory> incStories = new ArrayList<>();
+//	@OneToMany(mappedBy = "incStoryAuthor", cascade = CascadeType.ALL)
+//	private List<IncStory> incStories = new ArrayList<>();
 	
 	@Autowired
 	public Author(String authorFirstName, String authorLastName) {

@@ -51,14 +51,16 @@ public class MadlibsBackApplication {
 //		Level level = new Level("easy");
 //		levelService.save(level);
 		
+		
 //		Author auth = new Author("Alex", "LastName");
 //		as.save(auth);
 //		
-		IncStory incStory = new IncStory("story2", levelService.getLevelByLevelId(3), as.getAuthorByAuthorId(3), "Title2");
-		System.out.println(incStory);
+//		IncStory incStory = new IncStory("story2", levelService.getLevelByLevelId(1), as.getAuthorByAuthorId(1), "Title2");
+//		System.out.println(incStory);
 //		is.save(incStory);
 		
-//		ComStory comStory = new ComStory(incStory, user, "completed story", 1);
-//		iComStory.save(comStory);
+		ComStory comStory = new ComStory(is.getIncStoryByIncStoryId(3), us.getUserByUserId(1), "completed story", 1);
+		System.out.println(comStory);
+		iComStory.save(comStory);
 	}
 }

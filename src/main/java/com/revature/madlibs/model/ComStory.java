@@ -23,9 +23,9 @@ public class ComStory {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column (name = "com_story_id")
 	private int comStoryId;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private IncStory parentStory;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private User user;
 	private String comStory;
 	private int upvoteCount;

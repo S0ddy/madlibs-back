@@ -28,8 +28,8 @@ public class Level {
 	@Column (name = "level_id")
 	private int levelId;
 	private String description;
-	@OneToMany(mappedBy = "storyLevel", cascade = CascadeType.ALL)
-	private List<IncStory> incStories = new ArrayList<>();
+//	@OneToMany(mappedBy = "storyLevel", cascade = CascadeType.ALL)
+//	private List<IncStory> incStories = new ArrayList<>();
 	
 	@Autowired
 	public Level(String description) {

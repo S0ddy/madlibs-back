@@ -26,10 +26,10 @@ public class IncStory {
 	@Column (name = "inc_story_id")
 	private int incStoryId;
 	private String storyText;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn
 	private Level storyLevel;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn
 	private Author incStoryAuthor;
 	private String incStoryTitle;
@@ -42,7 +42,4 @@ public class IncStory {
 		this.incStoryAuthor = incStoryAuthor;
 		this.incStoryTitle = incStoryTitle;
 	}
-	
-	
-	
 }
