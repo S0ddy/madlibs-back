@@ -5,32 +5,27 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-import com.revature.madlibs.model.Author;
+import com.revature.madlibs.dao.IAuthorDao;
+import com.revature.madlibs.dao.IComStoryDao;
+import com.revature.madlibs.dao.IIncStoryDao;
+import com.revature.madlibs.dao.ILevelDao;
+import com.revature.madlibs.dao.ILoginDao;
+import com.revature.madlibs.dao.IUserDao;
 import com.revature.madlibs.model.ComStory;
-import com.revature.madlibs.model.IncStory;
-import com.revature.madlibs.model.Level;
-import com.revature.madlibs.model.Login;
-import com.revature.madlibs.model.User;
-import com.revature.madlibs.service.IAuthorService;
-import com.revature.madlibs.service.IComStoryService;
-import com.revature.madlibs.service.IIncStoryService;
-import com.revature.madlibs.service.ILevelService;
-import com.revature.madlibs.service.ILoginService;
-import com.revature.madlibs.service.IUserService;
 
 @SpringBootApplication
 @EnableJpaRepositories
 public class MadlibsBackApplication {
 	
-    private static IUserService us;
-    private static ILoginService ls;
-    private static ILevelService levelService;
-    private static IAuthorService as;
-    private static IIncStoryService is;
-    private static IComStoryService iComStory;
+    private static IUserDao us;
+    private static ILoginDao ls;
+    private static ILevelDao levelService;
+    private static IAuthorDao as;
+    private static IIncStoryDao is;
+    private static IComStoryDao iComStory;
 	
     @Autowired
-    public MadlibsBackApplication(IUserService us, ILoginService ls, ILevelService levelService, IAuthorService as, IIncStoryService is, IComStoryService iComStory) {
+    public MadlibsBackApplication(IUserDao us, ILoginDao ls, ILevelDao levelService, IAuthorDao as, IIncStoryDao is, IComStoryDao iComStory) {
         super();
         MadlibsBackApplication.us = us;
         MadlibsBackApplication.ls = ls;
